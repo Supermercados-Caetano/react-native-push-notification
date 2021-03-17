@@ -110,12 +110,18 @@ public class RNReceivedMessageHandler {
                 bundle.putString("largeIconUrl", imageUrl);
             }
         }
-
+        Log.d(LOG_TAG, "Message data payload: " + message.getData());
         Bundle dataBundle = new Bundle();
         Map<String, String> notificationData = message.getData();
         
         for(Map.Entry<String, String> entry : notificationData.entrySet()) {
-            dataBundle.putString(entry.getKey(), entry.getValue());
+            switch (entry.getKey()) {
+                case "pinpoint.notification.title": bundle.putString("title", entry.getValue()); dataBundle.putString("title", entry.getValue()); break;
+                case "pinpoint.notification.body": bundle.putString("message", entry.getValue()); dataBundle.putString("message", entry.getValue()); break;
+                case "pinpoint.notification.redirect": bundle.putString("redirect", entry.getValue()); dataBundle.putString("redirect", entry.getValue()); break;
+                case "pinpoint.notification.silentPush": bundle.putString("silentPush", entry.getValue()); dataBundle.putString("silentPush", entry.getValue()); break;
+                default: bundle.putString(entry.getKey(), entry.getValue()); dataBundle.putString(entry.getKey(), entry.getValue()); break;
+            }
         }
 
         bundle.putParcelable("data", dataBundle);
