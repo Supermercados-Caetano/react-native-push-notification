@@ -127,7 +127,7 @@ export class ChannelObject {
     playSound?: boolean;
 }
 
-export interface PushNotification {
+export interface PushNotificationInterface {
     configure(options: PushNotificationOptions): void;
     unregister(): void;
     localNotification(notification: PushNotificationObject): void;
@@ -158,6 +158,6 @@ export interface PushNotification {
     deleteChannel(channel_id: string): void;
 }
 
-declare const PushNotification: PushNotification;
+declare const PushNotification: PushNotificationInterface;
 
 export default PushNotification;

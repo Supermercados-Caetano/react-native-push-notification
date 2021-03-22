@@ -1,6 +1,6 @@
 {
   "name": "@supermercadoscaetano/react-native-push-notification",
-  "version": "7.2.4",
+  "version": "7.2.5",
   "description": "React Native Local and Remote Notifications",
   "main": "index.js",
   "scripts": {
@@ -22,10 +22,11 @@
   },
   "peerDependencies": {
     "@react-native-community/push-notification-ios": "^1.8.0",
-    "react-native": ">=0.33"
+    "react-native": ">=0.34"
   },
   "devDependencies": {
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "@types/react-native": "^0.34.37"
   },
   "author": "zo0r <http://zo0r.me>",
   "license": "MIT"
