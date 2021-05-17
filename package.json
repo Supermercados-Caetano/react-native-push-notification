@@ -1,5 +1,5 @@
 {
-  "name": "react-native-push-notification",
+  "name": "@supermercadoscaetano/react-native-push-notification",
   "version": "7.3.1",
   "description": "React Native Local and Remote Notifications",
   "main": "index.js",
